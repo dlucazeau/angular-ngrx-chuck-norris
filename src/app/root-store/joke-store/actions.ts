@@ -1,6 +1,8 @@
 import { Action } from '@ngrx/store';
 import { Joke } from '../../models';
 
+import * as hoaxActions from '../hoax-store/actions';
+
 export enum ActionTypes {
   LOAD_REQUEST = '[Joke] Load Request',
   LOAD_FAILURE = '[Joke] Load Failure',
@@ -21,4 +23,4 @@ export class LoadSuccessAction implements Action {
   constructor(public payload: { items: Joke[] }) {}
 }
 
-export type Actions = LoadRequestAction | LoadFailureAction | LoadSuccessAction;
+export type Actions = LoadRequestAction | LoadFailureAction | LoadSuccessAction | hoaxActions.HoaxBeginLoadingRequests;
